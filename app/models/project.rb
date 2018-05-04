@@ -11,7 +11,7 @@ class Project < ApplicationRecord
   validates :description, length: {:minimum => 20}
   #validates :category, length: {:minimum => 2}
   before_save  do start_later end
-  before_save do state_validation end
+#  before_save do state_validation end
   validates :name, uniqueness: true
 end
 def start_later
@@ -25,11 +25,11 @@ def start_later
 
 end
 
-def state_validation
-  if state != "waiting"
-    if state != "approved"
-      puts("invalid")
-      throw :abort
-    end
-  end
-end
+#def state_validation
+ # if state != "waiting"
+ #   if state != "approved"
+ #     puts("invalid")
+ #     throw :abort
+ #   end
+ # end
+#end

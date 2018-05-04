@@ -26,7 +26,7 @@
 <body>
 
 <!-- Navigation ------------------------------------------------------------------------------------------------------------------------------------------>
-<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+<!--<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><img src="/assets/boards.png"></a>
     <h1 style="color:mediumblue">EGGSHELL</h1>
@@ -80,8 +80,8 @@
   </div>
 
 
-</nav>
-
+</nav>-->
+<%= render 'form', project: @project %>
 
 <div class="container">
 
@@ -90,7 +90,7 @@
 
 <h1>Editing Project</h1>
 
-<%= render 'form', project: @project %>
+
 
 <%= link_to 'Show', @project %> |
 <%= link_to 'Back', projects_path %>
