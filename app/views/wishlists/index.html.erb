@@ -1,73 +1,4 @@
-<!------------------<!doctype html>
-<html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-</head>
-<title> Session</title>
-
-<body>
-<div class ="container">
-
-<!-- Navigation ------------------------------------------------------------------------------------------------------------------------------------------>
-<!--<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="/assets/boards.png"></a>
-    <h1 style="color:mediumblue">EGGSHELL</h1>
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarResponsive">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <a class="btn btn-primary m-1" href="/home/index">Home</a>
-          </li>
-
-          <li class="nav-item active">
-            <a class="btn btn-primary m-1" href="/projects">Projects</a>
-          </li>
-
-          <li class="nav-item active">
-            <a class="btn btn-primary m-1" href="/projects">My projects</a>
-          </li>
-
-          <li class="nav-item active">
-            <a class="btn btn-primary-1" href="/profiles">User profile</a>
-          </li>
-        <%else%>
-          <li class="nav-item active">
-            <a class="btn btn-primary m-1" href="/home/index">Home</a>
-          </li>
-
-          <li class="nav-item active">
-            <a class="btn btn-primary m-1" href="/projects">Projects</a>
-          </li>
-        <%end %>
-
-        <% if user_signed_in? %>
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :style=> 'color:#FFFFFF;', :class => 'btn btn-info'%>
-        <%else%>
-          <a href="/users/sign_in" class="btn btn-primary m-1"  role="button">Log in</a>
-
-
-        <%end %>
-        <div class="row">
-          <div class="col">
-            <input class="form-control mt-1 m-1" type="search" placeholder="Search" aria-label="Search">
-          </div>
-          <button class="btn btn-success mt-1 mb-1 m-1" type="submit">Search</button>
-        </div>
-      </ul>
-    </div>
-  </div>
-
-
-</nav>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -183,9 +114,8 @@
 
 <%end%>
 
-<!---
+
 <%= link_to 'New Wishlist', new_wishlist_path %>
--->
 
     </div>
 
