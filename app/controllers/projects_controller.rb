@@ -31,14 +31,13 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    puts params
-    @project = Project.new(project_params)
+    @project = Project.create(project_params)
     @project.User_id = current_user.id
     @project.state = "waiting"
-    #Multimedia.create(image:params[:project][:multimedia], project_id:@project)
 
     respond_to do |format|
       if @project.save
+        multimedia = Multimedia.create(image:params[:project][:multimedia], project_id: @project.id, profile_id: nil)
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else

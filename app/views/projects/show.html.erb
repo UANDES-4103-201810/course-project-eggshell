@@ -7,7 +7,7 @@
         <div class = "container">
           <h1><%= @project.name %></h1>
 
-            <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp; text=Falcon Heavy" alt="cohete feed" style="height: 500px; width: 100%; display: block;" src="/assets/cohete.jpg">
+          <img style="width: 80%" src="<%= @project.multimedia.image.url %>" >
             <p><%= @project.description %> </p>
 
         </div>
