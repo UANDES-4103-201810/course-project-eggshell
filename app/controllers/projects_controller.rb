@@ -31,9 +31,11 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
+    puts params
     @project = Project.new(project_params)
     @project.User_id = current_user.id
     @project.state = "waiting"
+    #Multimedia.create(image:params[:project][:multimedia], project_id:@project)
 
     respond_to do |format|
       if @project.save

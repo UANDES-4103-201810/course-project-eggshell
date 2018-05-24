@@ -3,7 +3,7 @@ class Project < ApplicationRecord
   has_one :descriptive_page, dependent: :destroy
   has_many :user_funds_projects, dependent: :destroy
   has_many :promises, dependent: :destroy
-  has_many :images, dependent: :destroy
+  has_one :multimedia
   has_many :videos, dependent: :destroy
   validates :goal,  numericality: {:greater_than_or_equal_to => 0}
   validates :money_colected,  numericality: {:greater_than_or_equal_to => 0}
