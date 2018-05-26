@@ -31,6 +31,8 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
+        multimedia = Multimedia.create(image:params[:profile][:multimedia], profile_id: @profile.id)
+
         format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: @profile }
       else
