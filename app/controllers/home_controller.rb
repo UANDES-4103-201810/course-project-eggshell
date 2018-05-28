@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @featured = Featured.all
+    @featured = Project.all.sample(2)
   end
 end

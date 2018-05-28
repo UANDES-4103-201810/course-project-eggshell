@@ -7,7 +7,7 @@
         <div class = "container">
           <h1><%= @project.name %></h1>
 
-          <img style="width: 80%" src="<%= @project.multimedia.image.url %>" >
+          <img style="width: 80%" src="<%= if @project.multimedia != nil then @project.multimedia.image.url end %>" >
             <p><%= @project.description %> </p>
 
         </div>

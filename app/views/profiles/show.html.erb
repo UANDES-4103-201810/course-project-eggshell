@@ -30,7 +30,7 @@
 
 <div class = "col-7">
   <!---<img src="/assets/getfunding.jpg" height="200" width="360">-->
-  <img style="width: 80%" src="<%= @profile.multimedia.image.url %>" >
+  <img style="width: 80%" src="<%= if @profile.multimedia != nil then @profile.multimedia.image.url end %>" >
 
 
 

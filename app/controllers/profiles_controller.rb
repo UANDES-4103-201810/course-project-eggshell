@@ -45,7 +45,9 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
+    @profile.User_id = current_user.id
     respond_to do |format|
+      multimedia = Multimedia.update(image:params[:profile][:multimedia], profile_id: @profile.id)
       if @profile.update(profile_params)
         format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @profile }

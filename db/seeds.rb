@@ -11,6 +11,8 @@ project2 = Project.create :User_id =>1, :name =>"Falcon 9",:description =>"Rocke
 featured1 = Featured.create :Project_id => 1
 featured2 = Featured.create :Project_id => 2
 promise1 = Promise.create :Project_id =>1, :value => 2, :condition =>"recieve a nice spaceX hut"
+Multimedia.create(project_id:1, profile_id:nil, image: File.new('app/assets/images/cohete.jpg', 'r'))
+Multimedia.create(project_id:2, profile_id:nil, image: File.new('app/assets/images/cohete.jpg', 'r'))
 promise2 = Promise.create :Project_id =>2, :value => 2, :condition =>"recieve a nice spaceX hut"
 promise3 = Promise.create :Project_id =>2, :value => 4, :condition =>"recieve a nice spaceX shirt"
 profile1 = Profile.create :User_id => 1, :name => "Admin", :nacionality => "USA", :age => 34, :sex => "Male"

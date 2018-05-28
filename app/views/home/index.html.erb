@@ -13,21 +13,21 @@
         <% @featured.each do |featured| %>
         <div class="col-md-4">
           <div class="card mb-4 box-shadow" style="border-radius: 25px">
-            <h1><%= featured.Project.name %></h1>
-            <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp; text=Falcon Heavy" alt="cohete feed" style="height: 225px; width: 100%; display: block;" src="/assets/cohete.jpg">
+            <h1><%= featured.name %></h1>
+            <img class="card-img-top" src="<%= if featured.multimedia != nil then featured.multimedia.image.url end %>" style="z-index: 2;height: 225px; width: 100%; display: block;" >
             <div class="card-body">
               <h3>Goal</h3>
-              <p class="card-text"><%= featured.Project.goal %></p>
+              <p class="card-text"><%= featured.goal %></p>
               <h3>Colected</h3>
-              <p class="card-text"><%= featured.Project.money_colected %></p>
+              <p class="card-text"><%= featured.money_colected %></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <% if user_signed_in? && featured.Project.User_id == current_user.id%>
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'Show', featured.Project %></button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'Edit', edit_project_path(featured.Project) %></button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'Destroy', featured.Project, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+                  <% if user_signed_in? && featured.User_id == current_user.id%>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'Show', featured %></button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'Edit', edit_project_path(featured) %></button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'Destroy', featured, method: :delete, data: { confirm: 'Are you sure?' } %></button>
                   <%else%>
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'Show', featured.Project %></button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'Show', featured %></button>
                   <%end%>
                 </div>
               </div>
