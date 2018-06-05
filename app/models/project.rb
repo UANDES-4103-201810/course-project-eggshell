@@ -14,6 +14,21 @@ class Project < ApplicationRecord
   before_save do state_validation end
   validates :name, uniqueness: true
 
+  def all_money
+    money = money_colected
+    funds = UserFundsProject.where(project_id:self.id)
+    promises = Promise.where(project_id:self.id)
+    funds.each do |f|
+      money += f[:amount]
+    end
+    promises.each do |p|
+      buyed = UserBuysPromise.find_by(promise_id:p.id)
+      if buyed != nil
+        money += buyed.lenght() * p.value
+      end
+    end
+    return money
+  end
 end
 
 def start_later
@@ -35,3 +50,5 @@ def state_validation
     end
   end
 end
+
+

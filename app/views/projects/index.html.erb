@@ -17,7 +17,7 @@
                 <h3>Goal</h3>
                 <p class="card-text"><%= project.goal %></p>
                 <h3>Colected</h3>
-                <p class="card-text"><%= project.money_colected %></p>
+                <p class="card-text"><%= project.all_money %></p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <% if user_signed_in? && project.User_id == current_user.id%>
