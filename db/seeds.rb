@@ -16,3 +16,11 @@ Multimedia.create(project_id:2, profile_id:nil, image: File.new('app/assets/imag
 promise2 = Promise.create :Project_id =>2, :value => 2, :condition =>"recieve a nice spaceX hut"
 promise3 = Promise.create :Project_id =>2, :value => 4, :condition =>"recieve a nice spaceX shirt"
 profile1 = Profile.create :User_id => 1, :name => "Admin", :nacionality => "USA", :age => 34, :sex => "Male"
+User.create  :email => "admin1@gmail.com", :password => "admin123", :admin => false
+User.create  :email => "admin2@gmail.com", :password => "admin123", :admin => false
+User.create  :email => "admi3n@gmail.com", :password => "admin123", :admin => false
+User.create  :email => "admin4@gmail.com", :password => "admin123", :admin => false
+ Profile.create :User_id => 2, :name => "Admin", :nacionality => "USA", :age => 34, :sex => "Male"
+ Profile.create :User_id => 3, :name => "Cristobal", :nacionality => "USA", :age => 34, :sex => "Male"
+Profile.create :User_id => 4, :name => "Juan", :nacionality => "USA", :age => 31, :sex => "Male"
+Profile.create :User_id => 5, :name => "Diego", :nacionality => "USA", :age => 24, :sex => "Male"

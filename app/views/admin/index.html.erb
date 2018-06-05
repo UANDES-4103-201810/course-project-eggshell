@@ -1,0 +1,36 @@
+<div style="margin-left: 15%; width: 70%;">
+  <p style="color:green"><%= flash[:accept] %></p>
+  <p style="color:red"><%= flash[:reject] %></p>
+  <h3>Admin</h3>
+  <ul class="pagination">
+    <li style="padding: 15px;background: #333333; color: white "><a href="/admin">Projects</a></li>
+    <li style="padding: 15px;"><a href="/admin/users">Users</a></li>
+  </ul>
+  <table>
+  <tr>
+    <th>Name</th>
+    <th>User</th>
+    <th>State</th>
+    <th colspan="2">Actions</th>
+  </tr>
+  <% @projects.each do |p| %>
+    <tr>
+      <td><%= p.name %></td>
+      <td><%= p.User.email %></td>
+      <td><%= p.state %></td>
+      <td><%= form_tag('/admin/project?do=accept;project=' + p.id.to_s, method:"post") do  %>
+        <%= button_tag :class => "btn btn-success", :title => "Accept" do %>
+          <i class="glyphicon glyphicon-plus"></i>
+          <% end %>
+        <% end %>
+      </td>
+      <td><%= form_tag('/admin/project?do=reject;project=' + p.id.to_s, method:"post") do  %>
+          <%= button_tag :class => "btn btn-danger", :title => "Reject" do %>
+            <i class="glyphicon glyphicon-plus"></i>
+          <% end %>
+        <% end %></td>
+      <td></td>
+    </tr>
+  <% end %>
+  </table>
+</div>

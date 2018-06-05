@@ -33,6 +33,11 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
+            <% if current_user.admin == true %>
+            <li class="nav-item active">
+              <a class="btn btn-primary m-1" style="color:#FFFFFF" href="/admin">Admin</a>
+            </li>
+            <% end %>
             <li class="nav-item active">
               <a class="btn btn-primary m-1" style="color:#FFFFFF" href="/home/index">Home</a>
             </li>

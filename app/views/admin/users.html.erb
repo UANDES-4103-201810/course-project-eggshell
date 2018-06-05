@@ -1,0 +1,37 @@
+<div style="margin-left: 15%; width: 70%;">
+  <p style="color:green"><%= flash[:admin] %></p>
+  <p style="color:blue"><%= flash[:stop] %></p>
+  <p style="color:red"><%= flash[:deleted] %></p>
+
+  <h3>Admin</h3>
+  <ul class="pagination">
+    <li style="padding: 15px;"><a href="/admin">Projects</a></li>
+    <li style="padding: 15px;background: #333333; color: white "><a href="/admin/users">Users</a></li>
+  </ul>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th colspan="2">Actions</th>
+    </tr>
+    <% @users.each do |p| %>
+      <tr>
+        <td><%= p.profile.name %></td>
+        <td><%= p.email %></td>
+        <td><%= p.profile.age %></td>
+        <td><%= form_tag('/admin/user?do=admin;user=' + p.id.to_s, method:"post") do  %>
+            <%= button_tag :class => "btn btn-success", :title => "Make Admin" do %>
+              <i class="glyphicon glyphicon-plus"></i>
+            <% end %>
+          <% end %>
+        </td>
+        <td><%= form_tag('/admin/user?do=stop_admin;user=' + p.id.to_s, method:"post") do  %>
+            <%= button_tag :class => "btn btn-primary", :title => "Remove Admin" do %>
+              <i class="glyphicon glyphicon-plus"></i>
+            <% end %>
+          <% end %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
