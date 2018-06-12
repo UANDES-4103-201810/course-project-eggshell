@@ -78,9 +78,11 @@
           <%end %>
           <div class="row">
             <div class="col">
-              <input class="form-control mt-1 m-1" type="search" placeholder="Search" aria-label="Search">
+              <%= form_tag ("/search"), :method => :get do %>
+                <%= text_field_tag :value, "", class: "form-control", style: "float:left; width:60%;margin-top:2px; " %>
+                <%= submit_tag "Search", class: "btn btn-success mt-1 mb-1 m-1" %>
+              <% end %>
             </div>
-            <button class="btn btn-success mt-1 mb-1 m-1" type="submit">Search</button>
           </div>
         </ul>
       </div>

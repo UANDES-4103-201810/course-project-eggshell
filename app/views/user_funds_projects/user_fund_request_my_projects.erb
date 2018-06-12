@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<p style="color: green"><%= flash[:accepted_fund] %></p>
+<p style="color: red"><%= flash[:rejected_fund] %></p>
+<h1>Funds Request </h1>
+
+
+<div class="album py-5 bg-light">
+  <div class="container">
+    <table class="table">
+      <tr>
+        <th>Project</th>
+        <th>User</th>
+        <th>Amount</th>
+        <th colspan="2">Actions</th>
+      </tr>
+      <% @all_request.each do |r| %>
+      <tr>
+        <td><%= r.Project.name %></td>
+        <td><%= r.User.email %></td>
+        <td><%= r.amount %></td>
+        <td>
+          <%= link_to "", href:'/user_found_projects_request/accept/' + r.id.to_s, class: "btn btn-success", title: "Accept", method: "post" do |b| %>
+            <span class="glyphicon glyphicon-plus">+</span>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to "", href:'/user_found_projects_request/reject/' + r.id.to_s, class: "btn btn-danger", title: "Reject",method: "post" do |b| %>
+            <span class="glyphicon glyphicon-remove">x</span>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+
+
+      </div>
+
+</div>
+</body>
+</html>

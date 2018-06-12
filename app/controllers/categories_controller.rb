@@ -3,6 +3,14 @@ class CategoriesController < ApplicationController
 
   # GET /categories
   # GET /categories.json
+
+  def search
+    @projects = Project.where("name LIKE ? OR description LIKE ?", "%#{params["value"]}%", "%#{params["value"]}%")
+    render "projects/index"
+  end
+
+
+
   def index
     @categories = Category.all
 

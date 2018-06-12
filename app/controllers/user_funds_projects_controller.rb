@@ -47,6 +47,32 @@ class UserFundsProjectsController < ApplicationController
     end
   end
 
+  def accept
+    @fund = UserFundsProject.find(params[:id])
+    @fund.update(status:"accepted")
+    flash[:accepted_fund] = "You accepted the fund request!"
+    redirect_to "/user_found_projects_request"
+  end
+
+  def reject
+    @fund = UserFundsProject.find(params[:id])
+    @fund.update(status:"rejected")
+    flash[:rejected_fund] = "You rejected the fund request!"
+    redirect_to "/user_found_projects_request"
+  end
+
+  def user_fund_request_my_projects
+    @all_request = []
+    projects = Project.where(user_id: current_user.id)
+    projects.each do |p|
+      @funds = UserFundsProject.where(project_id: p.id, status: "waiting")
+      @funds.each do |f|
+        @all_request.push(f)
+      end
+    end
+  end
+
+
   # PATCH/PUT /user_funds_projects/1
   # PATCH/PUT /user_funds_projects/1.json
   def update
@@ -79,6 +105,6 @@ class UserFundsProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_funds_project_params
-      params.require(:user_funds_project).permit(:User_id, :Project_id, :amount)
+      params.require(:user_funds_project).permit(:User_id, :Project_id, :amount, :status)
     end
 end

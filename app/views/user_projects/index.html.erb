@@ -2,6 +2,7 @@
 <a type="button" class="btn btn-sm btn-outline-secondary" href="/categories">Search by category</a>
 <% if user_signed_in? %>
   <a type="button" class="btn btn-sm btn-outline-secondary" href="/wishlists">Wishlist</a>
+  <%= link_to "Fund Request", '/user_found_projects_request' %>
 <% end %>
 
 <div class="album py-5 album-transparent">
@@ -11,7 +12,7 @@
         <div class="col-md-4">
           <div class="card mb-4 box-shadow" style="border-radius: 25px">
             <h1><%= project.name %></h1>
-            <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp; text=Falcon Heavy" alt="cohete feed" style="height: 225px; width: 100%; display: block;" src="/assets/cohete.jpg">
+            <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp; text=Falcon Heavy" alt="cohete feed" style="height: 225px; width: 100%; display: block;" src="<%= project.multimedia.image.url if project.multimedia != nil %>">
             <div class="card-body">
               <h3>Goal</h3>
               <p class="card-text"><%= project.goal %></p>
