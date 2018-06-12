@@ -27,9 +27,14 @@ class UserFundsProjectsController < ApplicationController
   # POST /user_funds_projects
   # POST /user_funds_projects.json
   def create
+    @user = current_user
+    @project = Project.find(session[:current_project_id])
+    PayMailer.with(user: @user, project: @project).fund_request.deliver_later
+
     @user_funds_project = UserFundsProject.new(user_funds_project_params)
     @user_funds_project.User_id= current_user.id
     @user_funds_project.Project_id= session[:current_project_id]
+    @user_funds_project.status = "waiting"
 
     respond_to do |format|
       if @user_funds_project.save

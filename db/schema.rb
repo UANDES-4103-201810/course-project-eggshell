@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 20180524011334) do
     t.integer "User_id"
     t.integer "Project_id"
     t.integer "amount"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["Project_id"], name: "index_user_funds_projects_on_Project_id"
