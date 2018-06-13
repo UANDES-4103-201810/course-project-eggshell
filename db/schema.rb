@@ -112,8 +112,6 @@ ActiveRecord::Schema.define(version: 20180524011334) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "provider"
-    t.string "uid"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
