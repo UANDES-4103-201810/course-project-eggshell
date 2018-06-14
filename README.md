@@ -1,28 +1,17 @@
 # README
 
 Cristobal Erenchun
-Felipe Gomez
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+entrega 4 
 
-* Ruby version
+cuando un usuario dona en un producto 
+se le envia un mail al creador del proyecto 
+y este debe haceptarlo o rechasarlo en la 
+opcion found request que esta en my proyects
 
-* System dependencies
+oauth funciona pero para seguir se 
+debe crear un profile a mano  
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# Assigment-1.2
+el usuario administrador es 
+admin@gmail.com :password => admin123

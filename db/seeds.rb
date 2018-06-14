@@ -9,9 +9,12 @@ user1 = User.create  :email => "admin@gmail.com", :password => "admin123", :admi
 project1 = Project.create :User_id =>1, :name =>"HS Holy Grial",:description =>"New epoxy material in the game",:goal=>500000, :money_colected=>123210,:expiration_date =>" 2033-09-03",state:"waiting",start_date:"2018-09-02",created_at:false,updated_at:false
 project2 = Project.create :User_id =>1, :name =>"Piano Bot",:description =>"Artificial intelligence  piano player",:goal=>100000, :money_colected=>32000,:expiration_date =>" 2019-09-03",state:"waiting",start_date:"2018-09-02",created_at:false,updated_at:false
 project3 = Project.create :User_id =>1, :name =>"Boutique Laptop",:description =>"Laptop for the lovers of the old´s writing machine ",:goal=>100000, :money_colected=>32000,:expiration_date =>" 2019-09-03",state:"waiting",start_date:"2018-09-02",created_at:false,updated_at:false
+project4 = Project.create :User_id =>1, :name =>"Artificial Wave co",:description =>"First artificial wave made by kelly slater x9 world champ",:goal=>5000000, :money_colected=>3000,:expiration_date =>" 2019-09-03",state:"waiting",start_date:"2018-09-02",created_at:false,updated_at:false
+
 Multimedia.create(project_id:1, profile_id:nil, image: File.new('app/assets/images/hs.jpg', 'r'))
 Multimedia.create(project_id:2, profile_id:nil, image: File.new('app/assets/images/pianobot.jpg', 'r'))
 Multimedia.create(project_id:3, profile_id:nil, image: File.new('app/assets/images/laptop.jpg', 'r'))
+Multimedia.create(project_id:4, profile_id:nil, image: File.new('app/assets/images/kelly.png', 'r'))
 
 
 featured1 = Featured.create :Project_id => 1
